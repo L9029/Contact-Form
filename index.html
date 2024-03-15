@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Contacto</title>
+</head>
+<body>
+    <main>
+        <section>
+            <div class="alert danger">
+                <span>Surgio un Problema</span>
+            </div>
+
+            <div class="alert succes">
+                <span>¡Mensaje Enviado con Éxito!</span>
+            </div>
+
+            <form action="./func/server.php" method="post">
+
+                <h1>Contactanos</h1>
+
+                <div class="input-group">
+                    <label for="name">Nombre: </label>
+                    <input type="text" name="name" id="name">
+                </div>
+
+                <div class="input-group">
+                    <label for="email">Correo: </label>
+                    <input type="email" name="email" id="email">
+                </div>
+
+                <div class="input-group">
+                    <label for="subject">Asunto: </label>
+                    <input type="text" name="subject" id="subject">
+                </div>
+
+                <div class="input-group">
+                    <label for="message">Mensaje: </label>
+                    <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                </div>
+
+                <div class="button-container">
+                    <button type="submit">Enviar</button>
+                </div>
+
+                <div class="contact-info">
+                    <div class="info">
+                        <span>13 Saw Mill Circle, North Olmest</span>
+                    </div>
+
+                    <div class="info">
+                        <span>+1 234 567 890</span>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
