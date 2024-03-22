@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Formulario de Contacto</title>
 </head>
 <body>
     <main>
         <section>
             <div class="alert danger">
-                <span>Surgio un Problema</span>
+                <span><i class="fa-solid fa-circle-exclamation"></i> Surgio un Problema</span>
             </div>
 
-            <div class="alert succes">
-                <span>¡Mensaje Enviado con Éxito!</span>
+            <div class="alert success">
+                <span><i class="fa-solid fa-circle-exclamation"></i> ¡Mensaje Enviado con Éxito!</span>
             </div>
 
             <form action="./func/server.php" method="post">
@@ -46,14 +47,16 @@
 
                 <div class="contact-info">
                     <div class="info">
-                        <span>13 Saw Mill Circle, North Olmest</span>
+                        <span><i class="fa-solid fa-location-dot"></i> 13 Saw Mill Circle, North Olmest</span>
                     </div>
 
                     <div class="info">
-                        <span>+1 234 567 890</span>
+                        <span><i class="fa-solid fa-phone"></i> +1 234 567 890</span>
                     </div>
                 </div>
             </form>
+
+            <script src="https://kit.fontawesome.com/60f707750a.js" crossorigin="anonymous"></script>
         </section>
     </main>
 </body>
