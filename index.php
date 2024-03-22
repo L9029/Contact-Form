@@ -1,5 +1,7 @@
 <?php
 
+require __DIR__ . '/src/mail.php';
+
 $status = "";
 
 function validate($name, $email, $subject, $message, $form){
@@ -14,7 +16,11 @@ if (isset($_POST["form"])) {
         $subject = htmlentities($_POST["subject"]);
         $message = htmlentities($_POST["message"]);
 
+        $body = "$name : <$email> send you a: <br><br> $message";
+
         $status = "Success";
+
+        sendEmail($name, $email, $subject, $body, true);
     }else {
         $status = "Error";
     }
