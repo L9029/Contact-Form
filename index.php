@@ -1,3 +1,27 @@
+<?php
+
+$status = "";
+
+function validate($name, $email, $subject, $message, $form){
+    return !empty($name) && !empty($email) && !empty($subject) && !empty($message);
+}
+
+if (isset($_POST["form"])) {
+    //Array unpacking
+    if (validate(...$_POST)) {
+        $name = htmlentities($_POST["name"]);
+        $email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
+        $subject = htmlentities($_POST["subject"]);
+        $message = htmlentities($_POST["message"]);
+
+        $status = "Success";
+    }else {
+        $status = "Error";
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,15 +33,23 @@
 <body>
     <main>
         <section>
-            <div class="alert danger">
-                <span><i class="fa-solid fa-circle-exclamation"></i> Surgio un Problema</span>
-            </div>
+            <?php if($status == "Error"): ?>
 
-            <div class="alert success">
-                <span><i class="fa-solid fa-circle-exclamation"></i> ¡Mensaje Enviado con Éxito!</span>
-            </div>
+                <div class="alert danger">
+                    <span><i class="fa-solid fa-circle-exclamation"></i> Surgio un Problema</span>
+                </div>
 
-            <form action="./func/server.php" method="post">
+            <?php endif; ?>
+
+            <?php if($status == "Success"):?>
+
+                <div class="alert success">
+                    <span><i class="fa-solid fa-circle-exclamation"></i> ¡Mensaje Enviado con Éxito!</span>
+                </div>
+
+            <?php endif; ?>
+            
+            <form action="./index.php" method="post">
 
                 <h1>Contactanos</h1>
 
@@ -42,7 +74,7 @@
                 </div>
 
                 <div class="button-container">
-                    <button type="submit">Enviar</button>
+                    <button type="submit" name="form">Enviar</button>
                 </div>
 
                 <div class="contact-info">
