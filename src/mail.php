@@ -13,7 +13,7 @@ function sendEmail($name, $email, $subject, $body, $html = false){
     $phpmailer->SMTPAuth = true;
     $phpmailer->Port = 2525;
     $phpmailer->Username = '496abc120f0b20';
-    $phpmailer->Password = '********98ac';
+    $phpmailer->Password = 'e41302bf3f98ac';
 
     //Adding the addressees
     $phpmailer->setFrom("company@mycompany.com", "My Company");
@@ -28,5 +28,3 @@ function sendEmail($name, $email, $subject, $body, $html = false){
 
     $phpmailer->send();
 }
-
-?>

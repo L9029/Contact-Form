@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . '/src/mail.php';
+require 'src/mail.php';
 
 $status = "";
 
